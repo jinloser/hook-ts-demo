@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Handle: React.FC = () => {
   useEffect(() => {
@@ -6,11 +6,11 @@ const Handle: React.FC = () => {
       document.title = Math.random().toString();
     };
     window.addEventListener('resize', handle);
-
     return () => {
       window.removeEventListener('resize', handle);
     };
   }, []);
+
   return <></>;
 };
 
