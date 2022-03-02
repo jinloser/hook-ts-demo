@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Article from './Component/Article';
 import Counter from './Component/Counter';
+import Handle from './Component/Handle';
 import SwichCount from './Component/SwichCount';
 
 const App: React.FC = () => {
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Counter />
       <Article title={'自定义123'} content={'自定义内容'} />
       <SwichCount />
+      <Handle />
     </>
   );
 };
