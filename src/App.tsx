@@ -4,6 +4,7 @@ import Article from './Component/Article';
 import Counter from './Component/Counter';
 import CountRef from './Component/CountRef';
 import Handle from './Component/Handle';
+import MemoParent from './Component/MemoUser/MemoParent';
 import SwichCount from './Component/SwichCount';
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <SwichCount />
       <Handle />
       <CountRef />
+      <MemoParent />
     </>
   );
 };
