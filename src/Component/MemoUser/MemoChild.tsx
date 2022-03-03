@@ -1,17 +1,21 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 type Data = {
   time: number;
+  children: number;
 };
 const MemoChild: React.FC<Data> = ({ time, children }) => {
+  useEffect(() => {
+    console.log('effect function here...');
+  }, [time]);
+
   const changeTime = (time: number) => {
     console.log('changeTime excuted...');
     return new Date(time).toISOString();
   };
 
-  const newTime: string = useMemo(() => {
-    return changeTime(time);
-  }, [time]);
+  const newTime: string = useMemo(() => changeTime(time), [time]);
+
   return (
     <>
       <p>Time is:{newTime}</p>
@@ -20,4 +24,4 @@ const MemoChild: React.FC<Data> = ({ time, children }) => {
   );
 };
 
-export default MemoChild;
+export default React.memo(MemoChild);
