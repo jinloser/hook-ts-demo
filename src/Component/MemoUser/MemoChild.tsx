@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 type Data = {
   time: number;
@@ -8,9 +8,13 @@ const MemoChild: React.FC<Data> = ({ time, children }) => {
     console.log('changeTime excuted...');
     return new Date(time).toISOString();
   };
+
+  const newTime: string = useMemo(() => {
+    return changeTime(time);
+  }, [time]);
   return (
     <>
-      <p>Time is:{changeTime(time)}</p>
+      <p>Time is:{newTime}</p>
       <p>Random id:{children}</p>
     </>
   );
