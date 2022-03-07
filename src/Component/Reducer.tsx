@@ -5,7 +5,7 @@ type StateType = {
 };
 
 type ActionType = {
-  type: 'reset' | 'decrement' | 'increment';
+  type: 'reset' | 'decrement' | 'increment' | 'quadrature';
 };
 
 const initialState = {
@@ -20,6 +20,8 @@ function reducer(state: StateType, action: ActionType) {
       return { count: state.count - 1 };
     case 'increment':
       return { count: state.count + 1 };
+    case 'quadrature':
+      return { count: state.count * 2 };
     default:
       return state;
   }
@@ -34,6 +36,7 @@ function Reducer({ initialCount = 0 }) {
       <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button onClick={() => dispatch({ type: 'quadrature' })}>✖️</button>
     </div>
   );
 }
