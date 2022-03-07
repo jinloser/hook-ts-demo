@@ -1,7 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
-import { memoChildData } from '../../utils/index.type';
+import React, { useCallback, useEffect, useMemo } from 'react';
 
-const MemoChild: React.FC<memoChildData> = ({ time, children }) => {
+type Data = {
+  time: number;
+  children: number;
+};
+const MemoChild: React.FC<Data> = ({ time, children }) => {
   useEffect(() => {
     console.log('effect function here...');
   }, [time]);
@@ -13,9 +16,13 @@ const MemoChild: React.FC<memoChildData> = ({ time, children }) => {
 
   const newTime: string = useMemo(() => changeTime(time), [time]);
 
+  const getNewTime = useCallback(() => {
+    return changeTime(time);
+  }, [time]);
+
   return (
     <>
-      <p>Time is:{newTime}</p>
+      <p>Time is:{getNewTime()}</p>
       <p>Random id:{children}</p>
     </>
   );
