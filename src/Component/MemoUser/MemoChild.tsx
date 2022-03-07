@@ -1,10 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
+import { memoChildData, memoParentData } from '../../utils/index.type';
 
-type Data = {
-  time: number;
-  children: number;
-};
-const MemoChild: React.FC<Data> = ({ time, children }) => {
+const MemoChild: React.FC<memoChildData> = ({ time, children }) => {
   useEffect(() => {
     console.log('effect function here...');
   }, [time]);
