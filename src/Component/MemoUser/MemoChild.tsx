@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { memoChildData, memoParentData } from '../../utils/index.type';
+import { memoChildData } from '../../utils/index.type';
 
 const MemoChild: React.FC<memoChildData> = ({ time, children }) => {
   useEffect(() => {
