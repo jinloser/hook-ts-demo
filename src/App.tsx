@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Article from './Component/Article';
+import ColorParent from './Component/ColorContext/ColorParent';
 import Counter from './Component/Counter';
 import CountRef from './Component/CountRef';
 import Handle from './Component/Handle';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <CountRef />
       <MemoParent />
       <Reducer />
+      <ColorParent />
     </>
   );
 };
