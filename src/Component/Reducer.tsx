@@ -29,8 +29,8 @@ function reducer(state: StateType, action: ActionType) {
   }
 }
 
-function Reducer({ initialCount = 0 }) {
-  const [state, dispatch] = useReducer(reducer, { count: initialCount });
+function Reducer() {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
@@ -39,7 +39,7 @@ function Reducer({ initialCount = 0 }) {
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
       <button onClick={() => dispatch({ type: 'quadrature' })}>✖️</button>
-      <button onClick={() => dispatch({ type: 'divide' })}>✖️</button>
+      <button onClick={() => dispatch({ type: 'divide' })}>/</button>
     </div>
   );
 }
