@@ -4,9 +4,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
+const States = React.createContext<string>('content');
+
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <States.Provider value="helloAPP">
+      <App />
+    </States.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
