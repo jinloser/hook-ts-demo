@@ -10,6 +10,7 @@ import Reducer from './Component/Reducer';
 import SwichCount from './Component/SwichCount';
 
 const App: React.FC = () => {
+  const states = React.createContext<string>('content');
   return (
     <>
       <Counter />
