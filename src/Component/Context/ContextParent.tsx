@@ -23,4 +23,4 @@ const ContextParent: React.FC = () => {
   );
 };
 
-export default ContextParent;
+export default React.memo(ContextParent);
