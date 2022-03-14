@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import APPContext from '../../utils/context-manager';
+import { APPContext } from '../../utils/context-manager';
 import ContextChild from './ContextChild';
 
 const fetchData = () => {
@@ -17,7 +17,7 @@ const ContextParent: React.FC = () => {
   return (
     <>
       <APPContext.Provider value={{ setStep, setCount, setNumber, fetchData }}>
-        <ContextChild />
+        <ContextChild step={step} count={count} number={number} />
       </APPContext.Provider>
     </>
   );

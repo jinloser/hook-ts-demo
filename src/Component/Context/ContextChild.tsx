@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import APPContext from '../../utils/context-manager';
+import { APPContext } from '../../utils/context-manager';
 
 interface PropsParam {
   step: number;
   number: number;
   count: number;
 }
-const ContextChild: React.FC = ({ step, number, count }: any) => {
+const ContextChild: React.FC<PropsParam> = ({ step, number, count }) => {
   const { setStep, setNumber, setCount, fetchData } = useContext(APPContext);
   useEffect(() => {
     fetchData().then((res: any) => {
