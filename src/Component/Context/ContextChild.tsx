@@ -7,6 +7,7 @@ interface PropsParam {
   count: number;
 }
 const ContextChild: React.FC<PropsParam> = ({ step, number, count }) => {
+  console.log(useContext(APPContext));
   const { setStep, setNumber, setCount, fetchData } = useContext(APPContext);
   useEffect(() => {
     fetchData().then((res: any) => {
