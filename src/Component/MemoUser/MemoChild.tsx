@@ -10,7 +10,6 @@ const MemoChild: React.FC<Data> = ({ time, children }) => {
   }, [time]);
 
   const changeTime = (time: number) => {
-    console.log('changeTime excuted...');
     return new Date(time).toISOString();
   };
 
