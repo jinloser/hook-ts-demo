@@ -4,7 +4,6 @@ const Handle: React.FC = () => {
   useEffect(() => {
     const handle = () => {
       document.title = Math.random().toString();
-      console.log('render');
     };
     window.addEventListener('resize', handle);
     return () => {
