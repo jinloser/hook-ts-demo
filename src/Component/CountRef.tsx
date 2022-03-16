@@ -7,7 +7,6 @@ const CountRef: React.FC = () => {
 
   const onFocusClick = () => {
     inputEl.current?.focus();
-    console.log(inputEl);
   };
 
   useEffect(() => {
