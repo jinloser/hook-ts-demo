@@ -7,6 +7,8 @@ const fetchData = () => {
     setTimeout(() => {
       resolve(1);
     });
+  }).catch((err) => {
+    console.log(console.log(err));
   });
 };
 
